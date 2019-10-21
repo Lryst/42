@@ -56,3 +56,12 @@ int main()
 	printf("SUBSTR%s\n", ft_substr("bonjour les copains, vous allez bien ?", - 1, - 1));
 	return 0;
 }
+
+int main()
+{
+    printf("%s\n",ft_strnstr("bonjour les copains", "bonjou", 14));
+    printf("%s\n",ft_strnstr("bonjour les copains", NULL, 14));
+    printf("%s\n",ft_strnstr("bonjour les copains", "les", 0));
+    printf("%s\n",ft_strnstr(NULL, "les", 14));
+    return (0);
+}

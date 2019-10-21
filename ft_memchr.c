@@ -6,9 +6,11 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 11:11:51 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/14 11:39:02 by lryst            ###   ########.fr       */
+/*   Updated: 2019/10/21 16:05:01 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void *ft_memchr(const void *s, int c, size_t n)
 {

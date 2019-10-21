@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/14 10:39:59 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:06:32 by lryst            ###   ########.fr       */
+/*   Created: 2019/10/21 17:21:02 by lryst             #+#    #+#             */
+/*   Updated: 2019/10/21 17:23:15 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memlen(void *s)
+void    ft_putstr_fd(char *s, int fd)
 {
-    int i;
+    unsigned long int i;
 
     i = 0;
-    while (*s[i])
+    while (s[i])
+    {
+        ft_putchar_fd(s[i], fd);
         i++;
-    return (i);
+    }
 }

@@ -6,10 +6,11 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:56:00 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/14 11:17:25 by lryst            ###   ########.fr       */
+/*   Updated: 2019/10/21 16:12:20 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 char	*ft_strrchr(const char *str, int c)
 {
 	int i;

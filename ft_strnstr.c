@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/14 10:39:59 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:06:32 by lryst            ###   ########.fr       */
+/*   Created: 2019/10/21 15:29:43 by lryst             #+#    #+#             */
+/*   Updated: 2019/10/21 16:02:04 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memlen(void *s)
+char    *ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-    int i;
+    unsigned long int i;
 
     i = 0;
-    while (*s[i])
-        i++;
-    return (i);
+    if (s1 == NULL || len == 0)
+        return (NULL);
+    if (s2 == NULL)
+        return (s1);
+    while (s1[i] && i < len)
+    {
+        if (ft_strspn(s2, s1[i]) == 1)
+            return (s2);
+        else
+            i++;
+    }
+    return (NULL);
 }

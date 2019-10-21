@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 12:07:02 by lryst             #+#    #+#             */
+/*   Updated: 2019/10/21 16:07:51 by lryst            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 int ft_countwords(char *str, char c)
 {
     int count;
@@ -18,7 +32,7 @@ int ft_countwords(char *str, char c)
 char    *ft_mallocwords(char *str, char c)
 {
     int i;
-    char *word;
+    char *words;
 
     i = 0;
     while (str[i] != c)
