@@ -27,8 +27,3 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 	res[u] = '\0';
 	return (res);
 }
-int main()
-{
-	printf("%s\n", ft_substr("bonjour les copains, vous allez bien ?", - 1, - 1));
-	return 0;
-}

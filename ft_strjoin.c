@@ -29,8 +29,3 @@ char    *ft_strjoin(const char *s1, const char *s2)
     tab[i] = '\0';
     return (tab);
 }
-
-int main()
-{
-    printf("%s\n", ft_strjoin("bonjour les copains", "p"));
-}
