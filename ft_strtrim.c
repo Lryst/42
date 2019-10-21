@@ -18,7 +18,7 @@ char    *ft_strtrim(char const *s1, char const *set)
 
     u = ft_strlen(s1);
     i = 0;
-    if (i = u || s1[i] == '\0')
+    if (i == u || s1[i] == '\0')
         return (NULL);
     while (ft_strspn(set, s1[i]) != 0)
             i++;

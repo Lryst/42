@@ -18,7 +18,7 @@ void    *ft_memset(void *s, int c, size_t u)
 
     if (u == 0)
         return (0);
-    while (s[i] != '\0' && i < u - 1)
+    while (s[i] && i < u - 1)
     {
         s[i] = c;
         i++;

@@ -20,7 +20,7 @@ void    *ft_memccpy(void *dest, const void *src, int i, size_t n)
     a = ft_memlen(dest);
     u = 0;
 
-    if (n = NULL)
+    if (n == 0)
         return (NULL);
     while (src[u] != '\0' && src[u] != i && u < n)       
     {
