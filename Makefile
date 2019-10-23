@@ -50,26 +50,29 @@ OBJS	= ${SRCS: .c=.o}
 
 NAME	= libft.a
 
-CC		= cc
+CC		= gcc ${INCLUDES} ${CFLAGS}
 
 rm		= rm -f
 
+HEADERS	= libft.h
+
 CFALGS	= -Wall -Wextra -Werror
+	
+$(NAME):	$(SRCS) $(OBJS) $(HEADERS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
+
+all:	${NAME}
 
 .c.o:
-			${CC} ${CFALGS} -c $< -o ${<:.c=.o}
-
-${NAME}: 	${OBJS}
-			${CC} -o ${NAME} ${OBJS}
-
-all:		${NAME}
+	${CC} ${CFALGS} -c $< -o ${<:.c=.o}
 
 clean:
-			${RM} ${OBJS}
+	${RM} ${OBJS}
 
-fclean:		clean
-			${RM} ${NAME}
+fclean:	clean
+	${RM} ${NAME}
 
-re:			fclean all
+re:		fclean all
 
-.PHONY:		all fclean clean re
+.PHONY:	all fclean clean re
