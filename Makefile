@@ -46,7 +46,7 @@ SRCS	= ft_memset.c \
 		ft_putnbr_fd.c \
 		ft_putstr_fd.c \
 
-OBJS	= ${SRCS: .c=.o}
+OBJS	= ${SRCS:.c=.o}
 
 NAME	= libft.a
 
@@ -58,11 +58,12 @@ HEADERS	= libft.h
 
 CFALGS	= -Wall -Wextra -Werror
 	
-$(NAME):	$(SRCS) $(OBJS) $(HEADERS)
+$(NAME):	$(SRCS) $(HEADERS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-all:	${NAME}
+all:	
+	cc -o libft.a ${SRCS}
 
 .c.o:
 	${CC} ${CFALGS} -c $< -o ${<:.c=.o}
