@@ -15,9 +15,11 @@
 void    *ft_memlen(void *s)
 {
     int i;
+    unsigned char *str;
 
+    str = (unsigned char*) s;
     i = 0;
-    while (*s[i])
+    while (*str[i])
         i++;
     return (i);
 }

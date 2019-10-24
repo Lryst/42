@@ -16,19 +16,22 @@ void    *ft_memccpy(void *dest, const void *src, int i, size_t n)
 {
     unsigned long int u;
     unsigned long int a;
+    unsigned char *dst;
+    unsigned char *sr;
 
     a = ft_memlen(dest);
     u = 0;
-
+    dst = (unsigned char*) dest;
+    sr = (unisgned char*) src;
     if (n == 0)
         return (NULL);
-    while (src[u] != '\0' && src[u] != i && u < n)       
+    while (sr[u] != '\0' && sr[u] != i && u < n)       
     {
-     dest[a + u] = src[u];
+     dst[a + u] = sr[u];
      u++;   
     }
-    if (src[u] == i)
-        return (dest[a + u + 1]);
+    if (sr[u] == i)
+        return (dst[a + u + 1]);
     else 
         return (NULL);   
 }

@@ -77,3 +77,8 @@ int main()
     printf("STRNSTR%s\n",strnstr(NULL, "les", 14));
     return (0);
 }
+
+int main()
+{
+    print("%p\n", *ft_calloc(6, 7));
+}
