@@ -1,14 +1,16 @@
+#include "libft.h"
 void    ft_putnbr(int nb)
 {
-    if (nb == "-214748364748")
-        ft_putstr("-214748364748");
+    long int n;
+
+    n = nb;
     if (nb < 0)
-        nb = nb * - 1;
+        n = n * - 1;
     if (nb >= 9)
     {
-        ft_putnbr(nb / 10);
-        ft_putnbr(nb % 10);
+        ft_putnbr(n / 10);
+        ft_putnbr(n % 10);
     }
     else
-        ft_putchar(nb + 48);
+        ft_putchar(n + 48);
 }
