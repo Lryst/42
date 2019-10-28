@@ -26,7 +26,7 @@ t_list  *ft_lstnew(void *content)
             return (NULL);
         ft_memcpy(newlst->content, content, sizeof(content));
     }
-    newlst->next = (NULL);
+    newlst->next = NULL;
     return (newlst);
     
 }

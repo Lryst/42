@@ -14,11 +14,17 @@
 
 void    ft_lstadd_front(t_list **alst, t_list *new)
 {
+    t_list *tmp;
+
     new = (t_list)malloc(sizeof(t_list) * new);
-    if (new ==NULL)
+    if (new == NULL)
         return (NULL);
-    if (alst == NULL)
-        new->next = NULL;
+    if (*alst == NULL)
+        *alst = new;
     else
-        new->next = *alst;    
+    {
+        tmp = *alst;
+        *alst = new;
+        new->next = tmp;
+    }    
 }
