@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 09:16:36 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:02:42 by lryst            ###   ########.fr       */
+/*   Updated: 2019/10/28 15:00:19 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	ft_strlcpy(const char *dest, const char *src, size_t n)
 		dest = &src[i];
 		i++;
 	}
-	return (ft_strlen(src));
+	return (ft_strlen((char *)src));
 }

@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:07:28 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:10:04 by lryst            ###   ########.fr       */
+/*   Updated: 2019/10/28 16:02:24 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     int len;
     char *str;
     
-    len = ft_strlen(s);
+    len = ft_strlen((char *) s);
     i = 0;
     if (s == NULL)
         return (NULL);

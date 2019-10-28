@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:56:00 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:12:20 by lryst            ###   ########.fr       */
+/*   Updated: 2019/10/28 15:05:19 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *str, int c)
 	while (str[i] != str[0])
 	{
 		if (str[i] == c)
-			return (str[i]);
+			return ((char *) str);
 		i--;
 	}
 	return (0);

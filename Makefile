@@ -6,7 +6,7 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/21 12:05:57 by lryst             #+#    #+#              #
-#    Updated: 2019/10/21 17:24:14 by lryst            ###   ########.fr        #
+#    Updated: 2019/10/28 16:45:20 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS	= ft_memset.c \
 		ft_memmove.c \
 		ft_memchr.c \
 		ft_memcmp.c \
+		ft_memlen.c \
 		ft_strlen.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
@@ -34,6 +35,7 @@ SRCS	= ft_memset.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
+		ft_strndup.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
@@ -44,7 +46,21 @@ SRCS	= ft_memset.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_putstr_fd.c \
+		ft_putnbr.c \
+		ft_strspn.c \
+		ft_strlen.c \
+		ft_intlen.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_lstnew.c \
+		ft_lstsize.c \
+		ft_lstadd_front.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \	
 
 OBJS	= ${SRCS:.c=.o}
 

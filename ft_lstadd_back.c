@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_putstr_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 12:10:00 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:03:49 by lryst            ###   ########.fr       */
+/*   Created: 2019/10/28 16:49:29 by lryst             #+#    #+#             */
+/*   Updated: 2019/10/28 18:10:45 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *p, int fd)
+void    ft_lstadd_back(t_list **alst, t_list *new);
 {
-    while (*p)
+    t_list *tmp;
+    tmp = *alst;
+    new = (t_list)malloc(sizeof(t_list) * new);
+    if (new ==NULL)
+        return (NULL);
+    new->next = NULL;
+    if (alst == NULL)
+        return (new);
+    while (tmp->next != NULL)
     {
-      ft_putchar_fd(*p, fd);
-       p++;
+        tmp = tmp->next;
     }
+    tmp->next = new;
 }

@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:07:11 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:08:30 by lryst            ###   ########.fr       */
+/*   Updated: 2019/10/28 15:52:58 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char    *ft_strjoin(const char *s1, const char *s2)
     u = 0;
     if (s1 == NULL || s2 == NULL)
         return (NULL);
-    tab = (char*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+    tab = (char*)malloc(sizeof(char) * (ft_strlen((char *) s1) + ft_strlen((char *) s2)) + 1);
     if (tab == NULL)
         return (NULL);
     while (s1[i])
