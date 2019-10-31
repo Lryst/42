@@ -12,16 +12,19 @@
 
 #include "libft.h"
 
-void    ft_lstadd_back(t_list **alst, t_list *new);
+void    ft_lstadd_back(t_list **alst, t_list *new)
 {
     t_list *tmp;
     tmp = *alst;
-    new = (t_list)malloc(sizeof(t_list));
+    new = (t_list*)malloc(sizeof(t_list));
     if (new ==NULL)
-        return (NULL);
+        return ;
     new->next = NULL;
     if (*alst == NULL)
-        return (new);
+    {
+        *alst = new;
+        return ;
+    }
     while (tmp->next != NULL)
     {
         tmp = tmp->next;

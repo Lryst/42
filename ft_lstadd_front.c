@@ -16,9 +16,9 @@ void    ft_lstadd_front(t_list **alst, t_list *new)
 {
     t_list *tmp;
 
-    new = (t_list)malloc(sizeof(t_list) * new);
+    new = (t_list*)malloc(sizeof(t_list));
     if (new == NULL)
-        return (NULL);
+        return ;
     if (*alst == NULL)
         *alst = new;
     else
