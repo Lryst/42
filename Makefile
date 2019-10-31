@@ -96,4 +96,3 @@ bonus:
 	gcc ${INCLUDES} ${CFLAGS} -c ${LST}
 	ar rc $(NAME) $(LIST)
 	ranlib $(NAME)
-
