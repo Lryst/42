@@ -51,8 +51,9 @@ SRCS	= ft_memset.c \
 		ft_strlen.c \
 		ft_intlen.c \
 		ft_putchar.c \
-		ft_putstr.c \
-		ft_lstnew.c \
+		ft_putstr.c 
+
+LST		=ft_lstnew.c \
 		ft_lstsize.c \
 		ft_lstadd_front.c \
 		ft_lstlast.c \
@@ -60,9 +61,11 @@ SRCS	= ft_memset.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c 	
+		ft_lstmap.c	
 
 OBJS	= ${SRCS:.c=.o}
+
+LIST 	= ${LST:.c=.o}
 
 NAME	= libft.a
 
@@ -80,7 +83,7 @@ $(NAME):
 all: $(NAME)
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${LIST}
 
 fclean:	clean
 	${RM} ${NAME}
@@ -88,3 +91,9 @@ fclean:	clean
 re:		fclean all
 
 .PHONY:	all fclean clean re
+
+bonus:
+	gcc ${INCLUDES} ${CFLAGS} -c ${LST}
+	ar rc $(NAME) $(LIST)
+	ranlib $(NAME)
+
