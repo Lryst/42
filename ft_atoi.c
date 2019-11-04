@@ -6,13 +6,13 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:27:00 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:03:56 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/04 12:00:20 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int				i;
 	long long int	result;

@@ -1,16 +1,38 @@
-#include "libft.h"
-void    ft_putnbr(int nb)
-{
-    long int n;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/04 13:44:09 by lryst             #+#    #+#             */
+/*   Updated: 2019/11/04 18:21:14 by lryst            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    n = nb;
-    if (nb < 0)
-        n = n * - 1;
-    if (nb >= 9)
-    {
-        ft_putnbr(n / 10);
-        ft_putnbr(n % 10);
-    }
-    else
-        ft_putchar(n + 48);
+#include "libft.h"
+
+void	ft_putnbr(int n)
+{
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+	}
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n = n * -1;
+		}
+		if (n > 9)
+		{
+			ft_putnbr(n / 10);
+			ft_putnbr(n % 10);
+		}
+		else
+		{
+			ft_putchar(n + 48);
+		}
+	}
 }

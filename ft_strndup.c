@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:07:35 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:12:12 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/04 14:03:38 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strndup(const char *s1, int n)
 {
-	char *dest;
-	int i;
+	char	*dest;
+	int		i;
 
 	i = 0;
 	if (n == 0 || s1 == NULL)
@@ -31,6 +31,6 @@ char	*ft_strndup(const char *s1, int n)
 		dest[i] = s1[i];
 		i++;
 	}
-    dest[i] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }

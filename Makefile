@@ -6,7 +6,7 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/21 12:05:57 by lryst             #+#    #+#              #
-#    Updated: 2019/10/28 16:45:20 by lryst            ###   ########.fr        #
+#    Updated: 2019/11/04 16:59:52 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ SRCS	= ft_memset.c \
 		ft_strlen.c \
 		ft_intlen.c \
 		ft_putchar.c \
-		ft_putstr.c 
+		ft_putstr.c \
+		ft_intlen.c
 
 LST		=ft_lstnew.c \
 		ft_lstsize.c \

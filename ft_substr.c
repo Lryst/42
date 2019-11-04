@@ -6,18 +6,17 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:08:04 by lryst             #+#    #+#             */
-/*   Updated: 2019/10/21 16:12:42 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/04 15:53:25 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	write(1, "a\n", 2);
-	unsigned long int i;
-	unsigned long int u;
-	char *res;
+	unsigned long int	i;
+	unsigned long int	u;
+	char				*res;
 
 	i = 0;
 	u = 0;
@@ -31,9 +30,9 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 	write(1, "b\n", 2);
 	while (u < len - 1)
 	{
-			res[u] = s[i];
-			i++;
-			u++;
+		res[u] = s[i];
+		i++;
+		u++;
 	}
 	write(1, "c\n", 2);
 	res[u] = '\0';
