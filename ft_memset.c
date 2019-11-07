@@ -20,8 +20,8 @@ void	*ft_memset(void *s, int c, size_t u)
 	i = 0;
 	str = (unsigned char*)s;
 	if (!u || !s)
-		return (0);
-	while (i < u - 1)
+		return (NULL);
+	while (str[i] && i < u)
 	{
 		str[i] = c;
 		i++;

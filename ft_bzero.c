@@ -19,10 +19,10 @@ void	*ft_bzero(void *str, size_t i)
 
 	n = 0;
 	s = (unsigned char*)str;
-	while (s[i] && n < i)
+	while (s[n] && n < i)
 	{
-		s[i] = '\0';
-		i++;
+		s[n] = '\0';
+		n++;
 	}
 	return (0);
 }
