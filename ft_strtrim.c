@@ -13,28 +13,23 @@
 #include "libft.h"
 #include <stdio.h>
 
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int i;
 	int u;
+	char *dest;
 
+	if (s1 == NULL || s1[0] == '\0')
+		return (NULL);
 	u = ft_strlen((char *)s1);
 	i = 0;
-	if (i == u || s1[i] == '\0')
-		return (NULL);
-	while (ft_strspn((char *)set, s1[i]) != 0)
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	while (ft_strrchr(set, s1[u]) != 0)
+	while (u != -1 && ft_strchr(set, s1[u]))
 		u--;
-	return (ft_strndup((char *)s1, (ft_strlen((char *)s1) - i - u)));
-}
-
-int main()
-{
-	char str[] = "bonjour les copains";
-	char set[] = " yo yo";
-	printf("FT_STRTRIM%s\n", ft_strtrim(str, set));
-	printf("STRTRIM%d\n", strtrim(str, set));
-	return (0);
+	dest = ft_strndup((char *)s1 + i, u - i == 0 ? 1 : u - i);
+	if (dest == NULL)
+		return (NULL);
+	u - i == 0 ? dest[1] = '\0' : 0;
+	return (dest);
 }

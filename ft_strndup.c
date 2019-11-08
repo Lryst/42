@@ -31,6 +31,7 @@ char	*ft_strndup(const char *s1, int n)
 		dest[i] = s1[i];
 		i++;
 	}
-	dest[i] = '\0';
+	dest[i] = s1[i];
+	dest[++i] = '\0';
 	return (dest);
 }
