@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 09:16:36 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/04 13:58:47 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/11 15:10:49 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		}
 	}
 	return (count);
-
 }

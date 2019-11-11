@@ -6,66 +6,73 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:07:02 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/04 15:50:07 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/11 16:09:45 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_countwords(char const *str, char c)
+static int			ft_mot(char const *s, char c)
 {
-	int		count;
-	int		i;
-
-	count = 1;
-	i = 0;
-	while (str[i] && str[i] == c)
-		i++;
-	while (str[i])
-	{
-		if (str[i] && str[i] != c)
-			i++;
-		str[i] == c ? count++ : 0;
-		while (str[i] && str[i] == c)
-			i++;
-	}
-	return (count);
-}
-
-char	*ft_mallocwords(char const *str, char c)
-{
+	int		n;
 	int		i;
 
 	i = 0;
-	while (str[i] && str[i] != c)
-		i++;
-	if (!ft_strndup(str, i))
-		return (NULL);
-	return (ft_strndup(str, i));
+	n = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] == c)
+			i++;
+		s[i] != '\0' ? n++ : 0;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+	}
+	return (n);
 }
 
-char	**ft_split(char const *s, char c)
+static char			*ft_fill(char const *s, char c, int i, char *tab)
 {
-	char	**tab;
-	int		i;
-	int		u;
+	int		k;
+	char	*mot;
 
-	i = ft_countwords(s, c);
-	u = -1;
-	tab = (char**)malloc(sizeof(char*) * i + 1);
-	if (tab == NULL || s == NULL)
+	k = i;
+	while (s[k] != c && s[k] != '\0')
+		k++;
+	mot = (char *)malloc(sizeof(char) * (k + 1));
+	if (!mot)
 		return (NULL);
-	while (*s && ++u < i)
-	{
-		while (*s && *s == c)
-			s++;
-		if (!ft_strndup(s, c))
-			return (NULL);
-		tab[u] = ft_mallocwords(s, c);
-		while (*s && *s != c)
-			s++;
-	}
-	tab[++u] = NULL;
+	k = 0;
+	while (s[i] != c && s[i] != '\0')
+		mot[k++] = s[i++];
+	mot[k] = '\0';
+	tab = mot;
 	return (tab);
 }
 
+char				**ft_split(char const *s, char c)
+{
+	char	**tab;
+	int		i;
+	int		n;
+	int		j;
+
+	i = 0;
+	n = 0;
+	j = -1;
+	if (!s)
+		return (NULL);
+	n = ft_mot(s, c);
+	tab = (char **)malloc(sizeof(tab) * (n + 1));
+	if (!tab)
+		return (NULL);
+	while (++j < n)
+	{
+		while (s[i] == c)
+			i++;
+		tab[j] = ft_fill(s, c, i, tab[j]);
+		while (s[i] != c && s[i] != '\0')
+			i++;
+	}
+	tab[j] = 0;
+	return (tab);
+}

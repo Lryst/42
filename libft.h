@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:20:40 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/08 22:21:01 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/11 20:00:42 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 
 int					ft_atoi(const char *str);
+void				*ft_calloc(size_t nmemb, size_t size);
 
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
@@ -67,7 +68,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putnbr(int nb);
 void				ft_putchar(char u);
 void				ft_putstr(char *str);
-char				*ft_strndup(const char *s1, int n);
+char				*ft_strndup(const char *s, int n);
 char				*ft_strdup(const char *s1);
 
 t_list				*ft_lstnew(void *content);
