@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 17:21:02 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/04 13:46:55 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/08 22:16:04 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned long int i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	if (fd < 0 || s == NULL)
+		return ;
+	write(fd, s, ft_strlen(s));
 }

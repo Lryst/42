@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:07:35 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/04 14:03:38 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/08 12:17:42 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strndup(const char *s, int n)
 {
-	char			*res;
-	int	i;
+	char	*res;
+	int		i;
 
 	i = 0;
 	res = (char*)malloc(sizeof(char) * (n + 1));

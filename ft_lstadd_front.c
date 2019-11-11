@@ -14,17 +14,9 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list *tmp;
-
-	new = (t_list*)malloc(sizeof(t_list));
-	if (new == NULL)
-		return ;
-	if (*alst == NULL)
-		*alst = new;
-	else
+	if (alst && new)
 	{
-		tmp = *alst;
+		new->next = *alst;
 		*alst = new;
-		new->next = tmp;
 	}
 }

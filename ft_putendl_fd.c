@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *p, int fd)
 {
+	if (p == NULL || fd < 0)
+		return ;
 	ft_putstr_fd(p, fd);
 	ft_putchar_fd('\n', fd);
 }

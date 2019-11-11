@@ -5,19 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 14:08:11 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/04 18:23:19 by lryst            ###   ########.fr       */
+/*   Created: 2019/11/08 22:19:57 by lryst             #+#    #+#             */
+/*   Updated: 2019/11/08 22:20:16 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_strlen(char *str)
+size_t  ft_strlen(const char *s)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+    size_t i;
+    
+    i = 0;
+    while (*s)
+    {
+        s++;
+        i++;
+    }
+    return (i);
 }

@@ -6,11 +6,36 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/21 12:05:57 by lryst             #+#    #+#              #
-#    Updated: 2019/11/04 16:59:52 by lryst            ###   ########.fr        #
+#    Updated: 2019/11/08 14:45:46 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_memset.c \
+
+LST		=ft_lstnew.c \
+		ft_lstsize.c \
+		ft_lstadd_front.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c	
+
+LIST 	= ${LST:.c=.o}
+
+.PHONY : all clean fclean re up
+
+CC = gcc $(INCLUDES) $(CFLAGS)
+
+CFLAGS = -Wall -Wextra -Werror -g3
+
+NAME = libft.a
+
+HEADERS = libft.h
+
+INCLUDES = -I 
+
+SRCS =	ft_memset.c \
  		ft_bzero.c \
 		ft_memcpy.c \
 		ft_memccpy.c \
@@ -30,6 +55,8 @@ SRCS	= ft_memset.c \
 		ft_strrchr.c \
 		ft_strncmp.c \
 		ft_strlcpy.c \
+		ft_strncpy.c \
+		ft_strcpy.c \
 		ft_strlcat.c \
 		ft_strnstr.c \
 		ft_atoi.c \
@@ -54,46 +81,31 @@ SRCS	= ft_memset.c \
 		ft_putstr.c \
 		ft_intlen.c
 
-LST		=ft_lstnew.c \
-		ft_lstsize.c \
-		ft_lstadd_front.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c	
+OBJS = $(SRCS:.c=.o)
 
-OBJS	= ${SRCS:.c=.o}
+all : $(NAME)
 
-LIST 	= ${LST:.c=.o}
+$(NAME) : $(SRCS) $(OBJS) $(HEADERS)
+		@ar rc $(NAME) $(OBJS)
+		@ranlib $(NAME)
+		@echo "\033[032mLibft : Object files Created\033[0m"
+		@echo "\033[032mLibft : Libft.a Created\033[0m"
 
-NAME	= libft.a
+clean :
+	@rm -f $(OBJS) $(LIST)
+	@echo "\033[32mLibft : Object files Removed\033[0m"
 
-rm		= rm -f
+fclean : clean
+	@rm -f $(NAME) $(LIST)
+	@echo "\033[32mLibft : Libft.a Removed\033[0m"
 
-HEADERS	= libft.h
+up : all clean
 
-CFALGS	= -Wall -Wextra -Werror
-
-$(NAME):
-	gcc ${INCLUDES} ${CFLAGS} -c ${SRCS}
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-
-all: $(NAME)
-
-clean:
-	${RM} ${OBJS} ${LIST}
-
-fclean:	clean
-	${RM} ${NAME}
-
-re:		fclean all
-
-.PHONY:	all fclean clean re
+re : fclean all
 
 bonus:
 	gcc ${INCLUDES} ${CFLAGS} -c ${LST}
 	ar rc $(NAME) $(LIST)
 	ranlib $(NAME)
+
+.SILENT: $(OBJS)

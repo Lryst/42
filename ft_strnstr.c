@@ -6,12 +6,11 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 15:29:43 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/07 15:58:10 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/08 12:18:40 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
@@ -38,4 +37,3 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	}
 	return (NULL);
 }
-

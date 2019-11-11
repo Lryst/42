@@ -19,9 +19,9 @@ int		ft_countwords(char const *str, char c)
 
 	count = 1;
 	i = 0;
-	while (str && str[i] && str[i] == c)
+	while (str[i] && str[i] == c)
 		i++;
-	while (str && str[i])
+	while (str[i])
 	{
 		if (str[i] && str[i] != c)
 			i++;
@@ -39,6 +39,8 @@ char	*ft_mallocwords(char const *str, char c)
 	i = 0;
 	while (str[i] && str[i] != c)
 		i++;
+	if (!ft_strndup(str, i))
+		return (NULL);
 	return (ft_strndup(str, i));
 }
 
@@ -57,6 +59,8 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s && *s == c)
 			s++;
+		if (!ft_strndup(s, c))
+			return (NULL);
 		tab[u] = ft_mallocwords(s, c);
 		while (*s && *s != c)
 			s++;
@@ -64,3 +68,4 @@ char	**ft_split(char const *s, char c)
 	tab[++u] = NULL;
 	return (tab);
 }
+

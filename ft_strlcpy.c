@@ -12,22 +12,32 @@
 
 #include "libft.h"
 
-int	ft_strlcpy(const char *dest, const char *src, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t i;
-	char *dst;
-	char *sr;
-	size_t u;
+	unsigned int	count;
 
-	dst = (char*)dest;
-	sr = (char*)src;
-	i = 0;
-	u = ft_strlen((char *)src);
-	while (sr[i] != '\0' && i < n - 1)
+	if (size == 0)
+		return (ft_strlen(src));
+	if (dest == NULL || src == NULL)
+		return (0);
+	count = 0;
+	while (size > 1 && *src)
 	{
-		dst[i] = sr[i];
-		i++;
+		*dest = *src;
+		++dest;
+		++src;
+		--size;
+		++count;
 	}
-	dst[i] = '\0';
-	return (u);
+	*dest = '\0';
+	while (*dest || *src)
+	{
+		if (*src)
+		{
+			++src;
+			++count;
+		}
+	}
+	return (count);
+
 }

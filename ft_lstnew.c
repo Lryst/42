@@ -16,16 +16,9 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list *newlst;
 
-	newlst = (t_list *)malloc(sizeof(t_list));
-	if (newlst == NULL || content == NULL)
+	if (!(newlst = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
-	else
-	{
-		newlst->content = (t_list *)malloc(sizeof(content));
-		if (newlst->content == NULL)
-			return (NULL);
-		ft_memcpy(newlst->content, content, sizeof(content));
-	}
+	newlst->content = content;
 	newlst->next = NULL;
 	return (newlst);
 }
