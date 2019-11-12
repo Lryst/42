@@ -6,13 +6,13 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:07:02 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/11 16:09:45 by lryst            ###   ########.fr       */
+/*   Updated: 2019/11/12 14:04:52 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_mot(char const *s, char c)
+static int			ft_word(char const *s, char c)
 {
 	int		n;
 	int		i;
@@ -61,9 +61,8 @@ char				**ft_split(char const *s, char c)
 	j = -1;
 	if (!s)
 		return (NULL);
-	n = ft_mot(s, c);
-	tab = (char **)malloc(sizeof(tab) * (n + 1));
-	if (!tab)
+	n = ft_word(s, c);
+	if (!(tab = (char **)malloc(sizeof(tab) * (n + 1))))
 		return (NULL);
 	while (++j < n)
 	{
