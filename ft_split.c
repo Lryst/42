@@ -6,7 +6,7 @@
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:07:02 by lryst             #+#    #+#             */
-/*   Updated: 2019/11/12 14:04:52 by lryst            ###   ########.fr       */
+/*   Updated: 2020/02/26 09:55:12 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,19 @@ static int			ft_word(char const *s, char c)
 static char			*ft_fill(char const *s, char c, int i, char *tab)
 {
 	int		k;
-	char	*mot;
+	char	*word;
 
 	k = i;
 	while (s[k] != c && s[k] != '\0')
 		k++;
-	mot = (char *)malloc(sizeof(char) * (k + 1));
-	if (!mot)
+	word = (char *)malloc(sizeof(char) * (k + 1));
+	if (!word)
 		return (NULL);
 	k = 0;
 	while (s[i] != c && s[i] != '\0')
-		mot[k++] = s[i++];
-	mot[k] = '\0';
-	tab = mot;
+		word[k++] = s[i++];
+	word[k] = '\0';
+	tab = word;
 	return (tab);
 }
 

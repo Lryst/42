@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 10:41:03 by lryst             #+#    #+#             */
-/*   Updated: 2020/02/19 17:26:36 by lryst            ###   ########.fr       */
+/*   Created: 2020/01/20 13:41:23 by lryst             #+#    #+#             */
+/*   Updated: 2020/02/26 20:03:53 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strdup(const char *s1)
+int		*ft_print_m(int *u, size_t *count)
 {
-	char	*dest;
-	int		i;
+	ft_putchar_c('-', count);
+	*u = *u * (-1);
+	return (u);
+}
 
-	i = 0;
-	dest = (char *)malloc(sizeof(char) * ft_strlen((char *)s1) + 1);
-	if (dest == 0)
-		return (NULL);
-	while (s1[i])
+void	ft_putchar_c(char u, size_t *count)
+{
+	write(1, &u, 1);
+	*count = *count + 1;
+}
+
+void	ft_putstr_c(char *str, size_t *count)
+{
+	int i;
+
+	if (str == NULL)
 	{
-		dest[i] = s1[i];
-		i++;
+		ft_putstr_c("(null)", count);
+		return;
 	}
-	dest[i] = '\0';
-	return (dest);
+	i = ft_strlen(str);
+	write(1, str, i);
+	*count = *count + i;
 }

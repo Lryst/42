@@ -6,24 +6,9 @@
 #    By: lryst <lryst@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/21 12:05:57 by lryst             #+#    #+#              #
-#    Updated: 2019/11/08 14:45:46 by lryst            ###   ########.fr        #
+#    Updated: 2020/02/25 16:32:26 by lryst            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-
-LST		=ft_lstnew.c \
-		ft_lstsize.c \
-		ft_lstadd_front.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c	
-
-LIST 	= ${LST:.c=.o}
-
-.PHONY : all clean fclean re up
 
 CC = gcc $(INCLUDES) $(CFLAGS)
 
@@ -66,7 +51,9 @@ SRCS =	ft_memset.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
+		ft_strjoinfree.c \
 		ft_split.c \
+		ft_split_set.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_putchar_fd.c \
@@ -79,7 +66,43 @@ SRCS =	ft_memset.c \
 		ft_intlen.c \
 		ft_putchar.c \
 		ft_putstr.c \
-		ft_intlen.c
+		ft_intlen.c \
+		ft_newstring.c \
+		ft_lstnew.c \
+		ft_lstsize.c \
+		ft_lstadd_front.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		get_next_line.c \
+		ft_conv.c \
+		ft_flags_m.c \
+		ft_flags_z.c \
+		ft_full_flags.c \
+		ft_len.c \
+		ft_parse.c \
+		ft_precision.c \
+		ft_print_char.c \
+		ft_print_di.c \
+		ft_print_s.c \
+		ft_print_c.c \
+		ft_print_maj_x.c \
+		ft_print_p.c \
+		ft_print_u.c \
+		ft_print_x.c \
+		ft_printf.c \
+		ft_widths.c \
+		ft_percent.c \
+		ft_check_struct.c \
+		ft_print_nbr.c \
+		ft_s_wp.c \
+		ft_s_lz_p.c \
+		ft_s_w_p.c \
+		ft_strcat.c \
+		ft_strjoinfree_separate.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -103,9 +126,5 @@ up : all clean
 
 re : fclean all
 
-bonus:
-	gcc ${INCLUDES} ${CFLAGS} -c ${LST}
-	ar rc $(NAME) $(LIST)
-	ranlib $(NAME)
-
-.SILENT: $(OBJS)
+.PHONY : all clean fclean re up
+.SILENT : $(OBJS)

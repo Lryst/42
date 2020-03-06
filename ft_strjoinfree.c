@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 12:07:53 by lryst             #+#    #+#             */
-/*   Updated: 2020/02/21 14:04:34 by lryst            ###   ########.fr       */
+/*   Created: 2019/12/18 15:03:52 by lryst             #+#    #+#             */
+/*   Updated: 2020/02/25 16:55:28 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strjoinfree(char *s1, char *s2)
 {
-	char	*str;
+	char	*tab;
 	int		i;
-	int		n;
-	int		j;
+	int		u;
 
 	i = 0;
-	j = 0;
-	if (!s1)
+	u = 0;
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	while (s1[i] && ft_strspn((char*)set, s1[i]))
-		i++;
-	n = ft_strlen(s1) - 1;
-	while (n >= 0 && ft_strspn((char*)set, s1[n]))
-		n--;
-	n++;
-	str = (char*)malloc(sizeof(char) * (n ? n - i + 1 : 1));
-	if (!str)
+	tab = (char*)malloc(sizeof(char) * (ft_strlen((char *)s1) +
+				ft_strlen((char *)s2)) + 1);
+	if (tab == NULL)
 		return (NULL);
-	if (s1[i] == '\0')
+	while (s1[i])
 	{
-		str[0] = '\0';
-		return (str);
+		tab[i] = s1[i];
+		i++;
 	}
-	str = n ? ft_substr(s1, (unsigned int)i, (unsigned int)n - i) : 0;
-	return (str);
+	while (s2[u])
+		tab[i++] = s2[u++];
+	tab[i] = '\0';
+	free(s1);
+	s1 = NULL;
+	return (tab);
 }

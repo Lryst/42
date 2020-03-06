@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_print_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 10:41:03 by lryst             #+#    #+#             */
-/*   Updated: 2020/02/19 17:26:36 by lryst            ###   ########.fr       */
+/*   Created: 2020/01/20 13:41:18 by lryst             #+#    #+#             */
+/*   Updated: 2020/01/20 14:36:22 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_c_right(t_flags *prt, va_list args, size_t *count)
 {
-	char	*dest;
-	int		i;
+	int n;
 
-	i = 0;
-	dest = (char *)malloc(sizeof(char) * ft_strlen((char *)s1) + 1);
-	if (dest == 0)
-		return (NULL);
-	while (s1[i])
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	n = 0;
+	ft_putchar_c(va_arg(args, int), count);
+	while (n++ < ((prt->nbr_f) - 1))
+		ft_putchar_c(' ', count);
+}
+
+void	ft_c_left(t_flags *prt, char q, va_list args, size_t *count)
+{
+	int n;
+
+	n = 0;
+	while (n++ < ((prt->nbr_f) - 1))
+		ft_putchar_c(q, count);
+	ft_putchar_c(va_arg(args, int), count);
 }

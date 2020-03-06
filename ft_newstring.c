@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_newstring.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lryst <lryst@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 12:07:53 by lryst             #+#    #+#             */
-/*   Updated: 2020/02/21 14:04:34 by lryst            ###   ########.fr       */
+/*   Created: 2020/02/13 16:35:44 by lryst             #+#    #+#             */
+/*   Updated: 2020/02/13 16:36:01 by lryst            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_newstring(size_t i)
 {
 	char	*str;
-	int		i;
-	int		n;
-	int		j;
+	size_t	zero;
 
-	i = 0;
-	j = 0;
-	if (!s1)
+	zero = 0;
+	if (!(str = (char*)malloc(sizeof(char) * i + 1)))
 		return (NULL);
-	while (s1[i] && ft_strspn((char*)set, s1[i]))
-		i++;
-	n = ft_strlen(s1) - 1;
-	while (n >= 0 && ft_strspn((char*)set, s1[n]))
-		n--;
-	n++;
-	str = (char*)malloc(sizeof(char) * (n ? n - i + 1 : 1));
-	if (!str)
-		return (NULL);
-	if (s1[i] == '\0')
+	while (str && zero < i + 1)
 	{
-		str[0] = '\0';
-		return (str);
+		str[zero] = '\0';
+		zero++;
 	}
-	str = n ? ft_substr(s1, (unsigned int)i, (unsigned int)n - i) : 0;
 	return (str);
 }
